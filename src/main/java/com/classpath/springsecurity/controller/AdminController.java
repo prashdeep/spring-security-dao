@@ -20,7 +20,6 @@ public class AdminController {
     //@PreAuthorize("hasAnyRole('ADMIN','USER')")
     @PostMapping("/")
     public User createUser(@RequestBody User user){
-        System.out.println("dsfffffffffffffffffffffffff");
         String password = user.getPassword();
         user.setPassword(this.bCryptPasswordEncoder.encode(password));
         return this.userRepository.save(user);
