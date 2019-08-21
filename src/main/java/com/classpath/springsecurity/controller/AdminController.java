@@ -30,4 +30,9 @@ public class AdminController {
         return this.userRepository.findAll();
     }
 
+    @PostMapping("/logout")
+    public void logout(){
+        HttpSession
+    }
+
 }

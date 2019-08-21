@@ -36,13 +36,13 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/api/v1/admin/**").authenticated()
                 .anyRequest()
-                .hasAnyRole("ADMIN","USER")
+                .hasAnyRole("ADMIN","USERS")
                 .and()
                 .httpBasic();
 
     }
 
-    //@Bean
+    @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(Arrays.asList("*"));
